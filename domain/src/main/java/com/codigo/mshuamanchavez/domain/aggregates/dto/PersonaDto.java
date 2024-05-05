@@ -2,13 +2,15 @@ package com.codigo.mshuamanchavez.domain.aggregates.dto;
 
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Timestamp;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PersonaDto {
     private Long id;
     private String nombre;

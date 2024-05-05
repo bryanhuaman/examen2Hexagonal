@@ -10,23 +10,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonaMapper {
     public static PersonaDto fromEntity(PersonaEntity personaEntity){
-        PersonaDto personaDto = new PersonaDto();
-        personaDto.setId(personaEntity.getId());
-        personaDto.setNombre(personaEntity.getNombre());
-        personaDto.setApellido(personaEntity.getApellido());
-        personaDto.setTipoDocumento(personaEntity.getTipoDocumento());
-        personaDto.setNumeroDocumento(personaEntity.getNumeroDocumento());
-        personaDto.setEmail(personaEntity.getEmail());
-        personaDto.setTelefono(personaEntity.getTelefono());
-        personaDto.setDireccion(personaEntity.getDireccion());
-        personaDto.setEstado(personaEntity.getEstado());
-        personaDto.setUsuaCrea(personaEntity.getUsuaCrea());
-        personaDto.setDateCreate(personaEntity.getDateCreate());
-        personaDto.setUsuaModif(personaEntity.getUsuaModif());
-        personaDto.setDateModif(personaEntity.getDateModif());
-        personaDto.setUsuaDelet(personaEntity.getUsuaDelet());
-        personaDto.setDateDelet(personaEntity.getDateDelet());
-        personaDto.setEmpresa(EmpresaMapper.fromEntity(personaEntity.getEmpresa()));
+        PersonaDto personaDto = PersonaDto.builder()
+                .id(personaEntity.getId())
+                .nombre(personaEntity.getNombre())
+                .apellido(personaEntity.getApellido())
+                .tipoDocumento(personaEntity.getTipoDocumento())
+                .numeroDocumento(personaEntity.getNumeroDocumento())
+                .email(personaEntity.getEmail())
+                .telefono(personaEntity.getTelefono())
+                .direccion(personaEntity.getDireccion())
+                .estado(personaEntity.getEstado())
+                .usuaCrea(personaEntity.getUsuaCrea())
+                .dateCreate(personaEntity.getDateCreate())
+                .usuaModif(personaEntity.getUsuaModif())
+                .dateModif(personaEntity.getDateModif())
+                .usuaDelet(personaEntity.getUsuaDelet())
+                .dateDelet(personaEntity.getDateDelet())
+                .empresa(EmpresaMapper.fromEntity(personaEntity.getEmpresa())).build();
+
         return personaDto;
     }
 

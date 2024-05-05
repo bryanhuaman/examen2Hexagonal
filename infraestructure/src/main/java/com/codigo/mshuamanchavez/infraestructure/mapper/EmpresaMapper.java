@@ -10,24 +10,25 @@ public class EmpresaMapper {
 
     public static EmpresaDto fromEntity(EmpresaEntity empresaEntity){
 
-        EmpresaDto empresaDto = new EmpresaDto();
-        empresaDto.setId(empresaEntity.getId());
-        empresaDto.setRazonSocial(empresaEntity.getRazonSocial());
-        empresaDto.setTipoDocumento(empresaEntity.getTipoDocumento());
-        empresaDto.setNumeroDocumento(empresaEntity.getNumeroDocumento());
-        empresaDto.setEstado(empresaEntity.getEstado());
-        empresaDto.setCondicion(empresaEntity.getCondicion());
-        empresaDto.setDireccion(empresaEntity.getDireccion());
-        empresaDto.setDistrito(empresaEntity.getDistrito());
-        empresaDto.setProvincia(empresaEntity.getProvincia());
-        empresaDto.setDepartamento(empresaEntity.getDepartamento());
-        empresaDto.setEsAgenteRetencion(empresaEntity.isEsAgenteRetencion());
-        empresaDto.setUsuaCrea(empresaEntity.getUsuaCrea());
-        empresaDto.setDateCreate(empresaEntity.getDateCreate());
-        empresaDto.setUsuaModif(empresaEntity.getUsuaModif());
-        empresaDto.setDateModif(empresaEntity.getDateModif());
-        empresaDto.setUsuaDelet(empresaEntity.getUsuaDelet());
-        empresaDto.setDateDelet(empresaEntity.getDateDelet());
+        EmpresaDto empresaDto = EmpresaDto.builder()
+                .id(empresaEntity.getId())
+                .razonSocial(empresaEntity.getRazonSocial())
+                .tipoDocumento(empresaEntity.getTipoDocumento())
+                .numeroDocumento(empresaEntity.getNumeroDocumento())
+                .estado(empresaEntity.getEstado())
+                .condicion(empresaEntity.getCondicion())
+                .direccion(empresaEntity.getDireccion())
+                .distrito(empresaEntity.getDistrito())
+                .provincia(empresaEntity.getProvincia())
+                .departamento(empresaEntity.getDepartamento())
+                .esAgenteRetencion(empresaEntity.isEsAgenteRetencion())
+                .usuaCrea(empresaEntity.getUsuaCrea())
+                .dateCreate(empresaEntity.getDateCreate())
+                .usuaModif(empresaEntity.getUsuaModif())
+                .dateModif(empresaEntity.getDateModif())
+                .usuaDelet(empresaEntity.getUsuaDelet())
+                .dateDelet(empresaEntity.getDateDelet()).build();
+
         return empresaDto;
     }
 
