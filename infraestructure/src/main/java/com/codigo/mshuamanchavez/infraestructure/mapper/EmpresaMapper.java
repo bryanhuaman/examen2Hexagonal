@@ -2,11 +2,14 @@ package com.codigo.mshuamanchavez.infraestructure.mapper;
 
 import com.codigo.mshuamanchavez.domain.aggregates.dto.EmpresaDto;
 import com.codigo.mshuamanchavez.infraestructure.entity.EmpresaEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmpresaMapper {
+
     public static EmpresaDto fromEntity(EmpresaEntity empresaEntity){
+
         EmpresaDto empresaDto = new EmpresaDto();
         empresaDto.setId(empresaEntity.getId());
         empresaDto.setRazonSocial(empresaEntity.getRazonSocial());
@@ -27,4 +30,5 @@ public class EmpresaMapper {
         empresaDto.setDateDelet(empresaEntity.getDateDelet());
         return empresaDto;
     }
+
 }

@@ -7,6 +7,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import java.util.List;
+
 @SpringBootApplication
 @ComponentScan("com.codigo.*")
 @EnableJpaRepositories("com.codigo")
@@ -15,6 +17,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Launcher {
     public static void main(String[] args) {
             SpringApplication.run(Launcher.class, args);
+
 
     }
 }

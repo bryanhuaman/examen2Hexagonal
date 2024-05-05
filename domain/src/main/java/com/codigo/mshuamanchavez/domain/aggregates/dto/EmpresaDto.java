@@ -1,8 +1,10 @@
 package com.codigo.mshuamanchavez.domain.aggregates.dto;
 
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.sql.Timestamp;
 

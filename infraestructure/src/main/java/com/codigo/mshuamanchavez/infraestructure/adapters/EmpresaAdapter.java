@@ -98,10 +98,14 @@ public class EmpresaAdapter implements EmpresaServiceOut{
     public List<EmpresaDto> buscarEmpresaTodosOut() {
         List<EmpresaDto> empresasDto = new ArrayList<>();
         List<EmpresaEntity> entity = empresaRepository.findAll();
-        for(EmpresaEntity empresa:entity){
+
+        entity.forEach(empresa -> empresasDto.add(EmpresaMapper.fromEntity(empresa)));
+
+        /*for(EmpresaEntity empresa:entity){
             empresasDto.add(EmpresaMapper.fromEntity(empresa));
 
-        }
+        }*/
+
         return empresasDto;
     }
 
